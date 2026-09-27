@@ -6,7 +6,7 @@ def find_(a, b, func, eps):
     :param eps: требуемая погрешность
     :return: корен функции, лежащий в промежутке
     """
-
+    
     while b - a > eps:
 
         center = (a + b) / 2
