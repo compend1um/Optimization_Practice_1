@@ -1,6 +1,6 @@
 import scipy
 
-def iteration(x_base, func, eps):
+def newton(x_base, func, eps):
     m = scipy.differentiate.derivative(func, x_base).df
 
     while True:
