@@ -17,6 +17,9 @@ from calls import meths1
 # method 2, выбрать х0 = 2.5
 
 calls.meths2.print_()
+
+
+
 """
 print(method3.iteration(2.5, func_j_0, 10 ** (-10)))
 print(method3.iteration(4, func_j_1, 10 ** (-10)))
