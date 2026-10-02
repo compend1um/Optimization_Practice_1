@@ -1,7 +1,5 @@
-from traceback import print_exc
 
 import pandas as pd
-
 
 
 def find_(a, b, func, accuracy):
@@ -10,7 +8,7 @@ def find_(a, b, func, accuracy):
     value_list = []
     eps_list = []
 
-    iteration = 0 # первая итерация получит номер 1
+    iteration = -1 # первая итерация получит номер 0
 
     while b - a > accuracy:
 
