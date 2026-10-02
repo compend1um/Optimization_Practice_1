@@ -1,6 +1,9 @@
 import scipy
 import pandas as pd
 
+# коментарии даны к method1.py. настоящий модуль использует те же функции и
+# работает примерно по тому же принципу, описывать все нюансы заново я не буду
+# -> смотри method1.py
 
 def newton(x_base, func, accuracy):
 
@@ -10,7 +13,6 @@ def newton(x_base, func, accuracy):
 
     m = scipy.differentiate.derivative(func, x_base).df
     iteration = -1 #первая иторация = 0
-
 
     while True:
 

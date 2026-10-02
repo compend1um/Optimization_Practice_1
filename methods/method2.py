@@ -2,6 +2,11 @@
 import pandas as pd
 
 
+# коментарии даны к method1.py. настоящий модуль использует те же функции и
+# работает примерно по тому же принципу, описывать все нюансы заново я не буду
+# -> смотри method1.py
+
+# главная функция
 def iteration(func, step, x_base, accuracy):
 
     iteration_list = []

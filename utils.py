@@ -1,4 +1,14 @@
+
 def print_header(self, method, root_number, *args):
+
+    # функция универсальна для печати заголовков для всех методов, несмотря
+    # на то, что у них разное количество аргументов, выводимых в заголовке.
+    #
+    # для деления пополам *args = (left_edge, right_edge)
+    # для итерации *args = (step, x0)
+    # для ньютона *args = x0
+    #
+
     methods = {
         "bisection": "Метод деления отрезка пополам",
         "iteration": "Метод простой итерации",
@@ -29,10 +39,6 @@ def print_header(self, method, root_number, *args):
         "-" * 40,
         sep="",
     )
-import os
-
-
-
 
 
 
@@ -40,6 +46,11 @@ class BesselFunction:
 
     def __init__(
             self, function_lambda, name_function, accuracy,
+
+            # root - корень. так как для функции того или иного порядка
+            # нужно напечатать два корня, а интервалы (или х0) для каждого
+            # корня меняются. поэтому было принято решение создать
+            # по два поля - одно для одного корня этого метода, второе - для второго
 
             method1_left_edge_root1, method1_right_edge_root1,
             method1_left_edge_root2, method1_right_edge_root2,
@@ -115,7 +126,4 @@ class BesselFunction:
                      self.method3_x_base_root2)
         method3.newton(self.method3_x_base_root2,
                        self.function_lambda, self.accuracy)
-
-
-
 

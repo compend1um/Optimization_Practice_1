@@ -1,21 +1,11 @@
 
-
-import numpy, scipy, matplotlib
+import scipy
 from utils import BesselFunction
 
 
-import calls.meths1
-import calls.meths2
-from methods import method3
-from calls import meths1
-
-
 def menu():
-    import os
-    import subprocess
 
-    select_function = None
-    select_method = None
+    import os
 
     while True:
         os.system("cls")
@@ -38,11 +28,10 @@ def menu():
 
             break
 
-
         if select_function not in [1, 2, 3, 4]:
+
             continue
 
-        #subprocess.run('cls', shell=True, check=False)
         os.system("cls")
 
         print(
@@ -75,12 +64,16 @@ def menu():
             if select_method == 2: func_j_1.iteration()
             if select_method == 3: func_j_1.newton()
 
+            os.system("pause")
+
         # y0
         if select_function == 3:
 
             if select_method == 1: func_y_0.bisection()
             if select_method == 2: func_y_0.iteration()
             if select_method == 3: func_y_0.newton()
+
+            os.system("pause")
 
         # y1
         if select_function == 4:
@@ -89,8 +82,7 @@ def menu():
             if select_method == 2: func_y_1.iteration()
             if select_method == 3: func_y_1.newton()
 
-        # exit
-
+            os.system("pause")
 
 
 func_j_0_lambda = lambda x: scipy.special.jv(0, x)
@@ -178,33 +170,5 @@ func_y_1 = BesselFunction(
 
 )
 
-#func_j_0.bisection()
 menu()
-# метод 1
-
-# calls.meths1.print_()
-
-
-
-# пример печати, надо еще три таких же
-
-
-
-# method 2, выбрать х0 = 2.5
-
-# calls.meths2.print_()
-
-
-
-
-# print(method3.iteration(2.5, func_j_0, 10 ** (-10)))
-# print(method3.iteration(4, func_j_1, 10 ** (-10)))
-# print(method3.iteration(1, func_v_0, 10 ** (-10)))
-# print(method3.iteration(1, func_v_1, 10 ** (-10)))
-
-
-
-
-
-
 
