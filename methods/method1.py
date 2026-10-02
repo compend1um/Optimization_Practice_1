@@ -1,3 +1,5 @@
+from traceback import print_exc
+
 import pandas as pd
 
 
@@ -46,7 +48,14 @@ def print_result(iteration_list, value_list, eps_list):
     })
 
     pd.set_option("display.float_format", lambda x: f"{x:.10f}")
+
     print(df.to_string(index=False))
+
+    print(
+        "\n",
+        "Найденный корень: х =", value_list[-1],
+        "\n",
+    )
 
 
 
