@@ -1,25 +1,54 @@
-def find_(a, b, func, eps):
-    """
-    :param a: конец левый
-    :param b: коней правый
-    :param func: функция
-    :param eps: требуемая погрешность
-    :return: корен функции, лежащий в промежутке
-    """
-    
-    while b - a > eps:
+import pandas as pd
 
+
+
+def find_(a, b, func, accuracy):
+
+    iteration_list = []
+    value_list = []
+    eps_list = []
+
+    iteration = 0 # первая итерация получит номер 1
+
+    while b - a > accuracy:
+
+        iteration += 1
         center = (a + b) / 2
+        eps = (b - a) / 2
+
+        add_iteration(iteration, center, eps, iteration_list, value_list, eps_list)
 
         if func(center) == 0:
-            return center
+            break
+
         if func(a) * func(center) < 0:
             b = center
 
         else:
             a = center
 
-    return (a + b) / 2
+    print_result(iteration_list, value_list, eps_list)
+
+    return None
+
+
+def add_iteration(iteration, center, eps, iter_list:list, val_list:list, eps_list:list):
+    iter_list.append(iteration)
+    val_list.append(center)
+    eps_list.append(eps)
+
+
+def print_result(iteration_list, value_list, eps_list):
+    df = pd.DataFrame({
+        "ITR": iteration_list,
+        "VAL": value_list,
+        "EPS": eps_list
+    })
+
+    pd.set_option("display.float_format", lambda x: f"{x:.10f}")
+    print(df.to_string(index=False))
+
+
 
 
 

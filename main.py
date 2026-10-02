@@ -8,7 +8,7 @@ from calls import meths1
 
 # метод 1
 
-#calls.meths1.print_()
+calls.meths1.print_()
 
 # пример печати, надо еще три таких же
 
@@ -16,7 +16,7 @@ from calls import meths1
 
 # method 2, выбрать х0 = 2.5
 
-calls.meths2.print_()
+#calls.meths2.print_()
 
 
 
