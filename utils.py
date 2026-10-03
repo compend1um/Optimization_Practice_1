@@ -1,3 +1,5 @@
+from numpy.ma.core import argsort
+
 
 def print_header(self, method, root_number, *args):
 
@@ -40,6 +42,31 @@ def print_header(self, method, root_number, *args):
         sep="",
     )
 
+
+def build_graph(name_function, lambda_function, *args):
+
+    import matplotlib.pyplot as plt
+    import numpy as np
+
+    x_values = np.linspace(0.01, 20, 1000)
+    y_values = []
+
+    for x_value in x_values:
+        y_values.append(lambda_function(x_value))
+
+    # дополнение для y1. чтобы функция не была вытянута по оси у,
+    # исключительно при ее вызове надо указать границы по оси у,
+    # чтобы исключить неудобное отображение графика
+    if args : plt.ylim(args[0], args[1])
+
+    plt.plot(x_values, y_values)
+    plt.title(name_function)
+    plt.xlabel("x")
+    plt.ylabel("y")
+    plt.grid()
+    plt.show()
+
+    return None
 
 
 class BesselFunction:
