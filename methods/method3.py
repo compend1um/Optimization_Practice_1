@@ -11,18 +11,19 @@ def newton(x_base, func, accuracy):
     value_list = []
     eps_list = []
 
-    m = scipy.differentiate.derivative(func, x_base).df
     iteration = -1 #первая иторация = 0
 
     while True:
 
+        m = scipy.differentiate.derivative(func, x_base).df
+
         iteration += 1
         x_new = x_base - func(x_base) / m
-        eps = abs( (x_new - x_base) / 2 )
+        eps = abs(x_new - x_base)
 
         add_iteration(iteration, x_new, eps, iteration_list, value_list, eps_list)
 
-        if abs(x_new - x_base) < accuracy:
+        if eps < accuracy:
             break
 
         x_base = x_new
@@ -45,7 +46,7 @@ def print_result(iteration_list, value_list, eps_list):
         "EPS": eps_list
     })
 
-    pd.set_option("display.float_format", lambda x: f"{x:.10f}")
+    pd.set_option("display.float_format", lambda x: f"{x:.12f}")
 
     print(df.to_string(index=False))
 

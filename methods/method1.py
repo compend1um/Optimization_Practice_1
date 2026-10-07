@@ -20,10 +20,6 @@ def find_(a, b, func, accuracy):
 
         add_iteration(iteration, center, eps, iteration_list, value_list, eps_list)
 
-        # значение функции равно нулю - метод подобрал корень
-        if func(center) == 0:
-            break
-
         # левый край и центр разных знаков - корень в левой половине, правый край надо перенасти на место центра
         if func(a) * func(center) < 0:
             b = center
@@ -53,13 +49,13 @@ def print_result(iteration_list, value_list, eps_list):
     })
 
     # печать eps в формате float с 10 знаками после запятой
-    pd.set_option("display.float_format", lambda x: f"{x:.10f}")
+    pd.set_option("display.float_format", lambda x: f"{x:.12f}")
 
     print(df.to_string(index=False))
 
     print(
         "\n",
-        "Найденный корень: х =", value_list[-1],
+        "Найденный корень: х =", f"{value_list[-1]}",
         "\n",
     )
 
