@@ -46,13 +46,13 @@ def print_result(iteration_list, value_list, eps_list):
         "EPS": eps_list
     })
 
-    pd.set_option("display.float_format", lambda x: f"{x:.12f}")
+    pd.set_option("display.float_format", lambda x: f"{x:.12f}"[:12])
 
     print(df.to_string(index=False))
 
     print(
         "\n",
-        "Найденный корень: х =", value_list[-1],
+        "Найденный корень: х =", f"{value_list[-1]}"[:12],
         "\n",
     )
 

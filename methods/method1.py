@@ -49,13 +49,14 @@ def print_result(iteration_list, value_list, eps_list):
     })
 
     # печать eps в формате float с 10 знаками после запятой
-    pd.set_option("display.float_format", lambda x: f"{x:.12f}")
+    pd.set_option("display.float_format", lambda x: f"{x:.12f}"[:12])
+    # 12 знаков это: 2 знака = целая часть + запятая, 10 знаков = дробная часть
 
     print(df.to_string(index=False))
 
     print(
         "\n",
-        "Найденный корень: х =", f"{value_list[-1]}",
+        "Найденный корень: х =", f"{value_list[-1]}"[:12],
         "\n",
     )
 
