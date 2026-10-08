@@ -1,5 +1,3 @@
-from numpy.ma.core import argsort
-
 
 def print_header(self, method, root_number, *args):
 

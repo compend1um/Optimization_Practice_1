@@ -170,17 +170,17 @@ func_y_0 = BesselFunction(
     accuracy = 10 ** (-10),
 
     method1_left_edge_root1 = 0,
-    method1_right_edge_root1 = 5,
-    method1_left_edge_root2 = 5,
-    method1_right_edge_root2 = 7.5,
+    method1_right_edge_root1 = 2.5,
+    method1_left_edge_root2 = 2.5,
+    method1_right_edge_root2 = 5,
 
-    method2_step_root1 = -1,
-    method2_x_base_root1 = 3.2,
-    method2_step_root2 = 1,
-    method2_x_base_root2 = 7,
+    method2_step_root1 = 1,
+    method2_x_base_root1 = 1,
+    method2_step_root2 = -1,
+    method2_x_base_root2 = 3.2,
 
-    method3_x_base_root1 = 3.2,
-    method3_x_base_root2 = 7,
+    method3_x_base_root1 = 1,
+    method3_x_base_root2 = 3.2,
 
 )
 
@@ -194,10 +194,10 @@ func_y_1 = BesselFunction(
     method1_left_edge_root2 = 5,
     method1_right_edge_root2 = 7.5,
 
-    method2_step_root1 = -1,
+    method2_step_root1 = 1,
     method2_x_base_root1 = 2,
-    method2_step_root2 = 1,
-    method2_x_base_root2 = 7,
+    method2_step_root2 = -1,
+    method2_x_base_root2 = 5.4,
 
     method3_x_base_root1 = 2,
     method3_x_base_root2 = 5.5,
